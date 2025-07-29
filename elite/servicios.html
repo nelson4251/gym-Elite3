@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios - GYM Elite</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fuentes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <!-- Video de fondo -->
+    <div class="video-fondo-servicios-container">
+      <video autoplay muted loop playsinline class="video-fondo-servicios">
+        <source src="imagenes y videos/servicios.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <section class="carrusel-3d-container">
+        <div class="carrusel-3d" id="carrusel3D">
+          <div class="servicio-card">
+            <i class="fas fa-dumbbell"></i>
+            <h2>Zona de Pesas</h2>
+          </div>
+          <div class="servicio-card">
+            <i class="fas fa-volleyball-ball"></i>
+            <h2>Voleibol</h2>
+          </div>
+          <div class="servicio-card">
+            <i class="fas fa-heartbeat"></i>
+            <h2>Funcional</h2>
+          </div>
+          <div class="servicio-card">
+            <i class="fas fa-apple-alt"></i>
+            <h2>Nutrición</h2>
+          </div>
+          <div class="servicio-card">
+            <i class="fas fa-running"></i>
+            <h2>Cardio</h2>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const contenedor = document.getElementById("scroll-servicios");
+        let presionado = false;
+        let inicioX;
+        let scrollLeft;
+
+        contenedor.addEventListener("mousedown", (e) => {
+          presionado = true;
+          contenedor.classList.add("activo");
+          inicioX = e.pageX - contenedor.offsetLeft;
+          scrollLeft = contenedor.scrollLeft;
+        });
+
+        contenedor.addEventListener("mouseleave", () => {
+          presionado = false;
+          contenedor.classList.remove("activo");
+        });
+
+        contenedor.addEventListener("mouseup", () => {
+          presionado = false;
+          contenedor.classList.remove("activo");
+        });
+
+        contenedor.addEventListener("mousemove", (e) => {
+          if (!presionado) return;
+          e.preventDefault();
+          const x = e.pageX - contenedor.offsetLeft;
+          const desplazamiento = (x - inicioX) * 2;
+          contenedor.scrollLeft = scrollLeft - desplazamiento;
+        });
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

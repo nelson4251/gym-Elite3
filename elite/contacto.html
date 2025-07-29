@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto - GYM Elite</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+<div class="fondo-contacto"></div>
+  <main style="padding: 40px; max-width: 600px; margin: auto;">
+    <h1>Contáctanos</h1>
+    <form id="formulario-contacto">
+      <label for="nombre">Nombre:</label><br />
+      <input type="text" id="nombre" name="nombre" required /><br /><br />
+
+      <label for="email">Correo Electrónico:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="telefono">Teléfono:</label><br />
+      <input type="tel" id="telefono" name="telefono" pattern="[0-9]{7,15}" required /><br /><br />
+
+      <label for="mensaje">Mensaje:</label><br />
+      <textarea id="mensaje" name="mensaje" required></textarea><br /><br />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <div id="footer-container"></div>
+  <script src="script.js"></script>
+</body>
+</html>
